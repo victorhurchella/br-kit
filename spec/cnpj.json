@@ -1,0 +1,180 @@
+{
+  "module": "cnpj",
+  "isValid": [
+    {
+      "input": "11.222.333/0001-81",
+      "expected": true
+    },
+    {
+      "input": "11222333000181",
+      "expected": true
+    },
+    {
+      "input": "11444777000161",
+      "expected": true
+    },
+    {
+      "input": "60391812000137",
+      "expected": true
+    },
+    {
+      "input": "12.ABC.345/01DE-35",
+      "expected": true
+    },
+    {
+      "input": "12abc34501de35",
+      "expected": true
+    },
+    {
+      "input": "12ABC34501DE35",
+      "expected": true
+    },
+    {
+      "input": "ABCDEFGH000195",
+      "expected": true
+    },
+    {
+      "input": "BRKIT00000A136",
+      "expected": true
+    },
+    {
+      "input": "1A2B3C4D5E6F34",
+      "expected": true
+    },
+    {
+      "input": "00ABCDEF123402",
+      "expected": true
+    },
+    {
+      "input": "SP00ALPHA00197",
+      "expected": true
+    },
+    {
+      "input": "11.222.333/0001-80",
+      "expected": false
+    },
+    {
+      "input": "00.000.000/0000-00",
+      "expected": false
+    },
+    {
+      "input": "12.ABC.345/01DE-34",
+      "expected": false
+    },
+    {
+      "input": "12ABC34501DE3",
+      "expected": false
+    },
+    {
+      "input": "12ABC34501DEAB",
+      "expected": false
+    },
+    {
+      "input": "12@BC34501DE35",
+      "expected": false
+    },
+    {
+      "input": "",
+      "expected": false
+    }
+  ],
+  "validateDetailed": [
+    {
+      "input": "11.222.333/0001-81",
+      "valid": true,
+      "reason": null
+    },
+    {
+      "input": "12.ABC.345/01DE-35",
+      "valid": true,
+      "reason": null
+    },
+    {
+      "input": "00000000000000",
+      "valid": false,
+      "reason": "repeated-digits"
+    },
+    {
+      "input": "12.ABC.345/01DE-34",
+      "valid": false,
+      "reason": "invalid-check-digit"
+    },
+    {
+      "input": "12ABC34501DE3",
+      "valid": false,
+      "reason": "invalid-length"
+    },
+    {
+      "input": "12ABC34501DEAB",
+      "valid": false,
+      "reason": "invalid-characters"
+    },
+    {
+      "input": "1$ABC34501DE35",
+      "valid": false,
+      "reason": "invalid-characters"
+    }
+  ],
+  "isAlphanumeric": [
+    {
+      "input": "12ABC34501DE35",
+      "expected": true
+    },
+    {
+      "input": "12.ABC.345/01DE-35",
+      "expected": true
+    },
+    {
+      "input": "12abc34501de35",
+      "expected": true
+    },
+    {
+      "input": "11222333000181",
+      "expected": false
+    },
+    {
+      "input": "11.222.333/0001-81",
+      "expected": false
+    },
+    {
+      "input": "123",
+      "expected": false
+    }
+  ],
+  "format": [
+    {
+      "input": "12ABC34501DE35",
+      "expected": "12.ABC.345/01DE-35"
+    },
+    {
+      "input": "11222333000181",
+      "expected": "11.222.333/0001-81"
+    },
+    {
+      "input": "12abc34501de35",
+      "expected": "12.ABC.345/01DE-35"
+    },
+    {
+      "input": "123",
+      "error": true
+    },
+    {
+      "input": "12ABC34501DEAB",
+      "error": true
+    }
+  ],
+  "strip": [
+    {
+      "input": "12.ABC.345/01DE-35",
+      "expected": "12ABC34501DE35"
+    },
+    {
+      "input": "12abc34501de35",
+      "expected": "12ABC34501DE35"
+    },
+    {
+      "input": "11.222.333/0001-81",
+      "expected": "11222333000181"
+    }
+  ]
+}

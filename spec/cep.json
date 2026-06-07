@@ -1,0 +1,57 @@
+{
+  "module": "cep",
+  "isValid": [
+    {
+      "input": "01310-100",
+      "expected": true
+    },
+    {
+      "input": "01310100",
+      "expected": true
+    },
+    {
+      "input": "00000-000",
+      "expected": true
+    },
+    {
+      "input": "1310100",
+      "expected": false
+    },
+    {
+      "input": "013101000",
+      "expected": false
+    },
+    {
+      "input": "0131O-100",
+      "expected": false
+    },
+    {
+      "input": "",
+      "expected": false
+    }
+  ],
+  "format": [
+    {
+      "input": "01310100",
+      "expected": "01310-100"
+    },
+    {
+      "input": "01310-100",
+      "expected": "01310-100"
+    },
+    {
+      "input": "1310100",
+      "error": true
+    }
+  ],
+  "strip": [
+    {
+      "input": "01310-100",
+      "expected": "01310100"
+    },
+    {
+      "input": "01310100",
+      "expected": "01310100"
+    }
+  ]
+}

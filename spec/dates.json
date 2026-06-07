@@ -1,0 +1,95 @@
+{
+  "module": "dates",
+  "parsePtBr": [
+    {
+      "input": "31/12/2025",
+      "expected": "2025-12-31"
+    },
+    {
+      "input": "31/12/25",
+      "expected": "2025-12-31"
+    },
+    {
+      "input": "31-12-2025",
+      "expected": "2025-12-31"
+    },
+    {
+      "input": "01/01/2000",
+      "expected": "2000-01-01"
+    },
+    {
+      "input": "1/1/2020",
+      "expected": "2020-01-01"
+    },
+    {
+      "input": "29/02/2024",
+      "expected": "2024-02-29"
+    },
+    {
+      "input": "05/06/70",
+      "expected": "1970-06-05"
+    },
+    {
+      "input": "05/06/69",
+      "expected": "2069-06-05"
+    },
+    {
+      "input": "29/02/2023",
+      "error": true
+    },
+    {
+      "input": "31/04/2025",
+      "error": true
+    },
+    {
+      "input": "00/01/2025",
+      "error": true
+    },
+    {
+      "input": "32/01/2025",
+      "error": true
+    },
+    {
+      "input": "13/13/2025",
+      "error": true
+    },
+    {
+      "input": "３１/１２/２０２５",
+      "error": true
+    },
+    {
+      "input": "not a date",
+      "error": true
+    }
+  ],
+  "formatPtBr": [
+    {
+      "input": "2025-12-31",
+      "expected": "31/12/2025"
+    },
+    {
+      "input": "2024-02-29",
+      "expected": "29/02/2024"
+    },
+    {
+      "input": "2000-01-01",
+      "expected": "01/01/2000"
+    },
+    {
+      "input": "2025-06-05T10:30:00",
+      "expected": "05/06/2025"
+    },
+    {
+      "input": "2025-13-01",
+      "error": true
+    },
+    {
+      "input": "2025-02-30",
+      "error": true
+    },
+    {
+      "input": "garbage",
+      "error": true
+    }
+  ]
+}

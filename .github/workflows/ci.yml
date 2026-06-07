@@ -1,0 +1,68 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  typescript:
+    name: TypeScript (lint · build · test · size)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm audit --audit-level=high
+      - run: npm run lint:ts
+      - run: npm run typecheck
+      - run: npm run build
+      - run: npm run test:ts
+      - run: npm run size
+
+  python:
+    name: Python (ruff · mypy · pytest)
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e "packages/py[dev]"
+      - run: ruff check packages/py
+      - run: mypy packages/py/src
+      - run: pytest packages/py -q
+
+  parity:
+    name: Cross-language parity gate
+    needs: [typescript, python]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/check-parity.mjs
+      - name: Verify shared vectors regenerate identically
+        run: |
+          node scripts/gen-vectors.mjs
+          git diff --exit-code spec/ || (echo "::error::spec/ is out of date — run: npm run build && node scripts/gen-vectors.mjs" && exit 1)

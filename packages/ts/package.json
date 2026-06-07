@@ -1,0 +1,126 @@
+{
+  "name": "br-kit",
+  "version": "0.1.0",
+  "description": "Zero-dependency Brazilian document utils — CPF, CNPJ (alphanumeric-ready), CEP, phone, currency, dates. Mirrored TypeScript + Python APIs.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Victor Hugo",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./cpf": {
+      "import": {
+        "types": "./dist/cpf.d.ts",
+        "default": "./dist/cpf.js"
+      },
+      "require": {
+        "types": "./dist/cpf.d.cts",
+        "default": "./dist/cpf.cjs"
+      }
+    },
+    "./cnpj": {
+      "import": {
+        "types": "./dist/cnpj.d.ts",
+        "default": "./dist/cnpj.js"
+      },
+      "require": {
+        "types": "./dist/cnpj.d.cts",
+        "default": "./dist/cnpj.cjs"
+      }
+    },
+    "./cep": {
+      "import": {
+        "types": "./dist/cep.d.ts",
+        "default": "./dist/cep.js"
+      },
+      "require": {
+        "types": "./dist/cep.d.cts",
+        "default": "./dist/cep.cjs"
+      }
+    },
+    "./phone": {
+      "import": {
+        "types": "./dist/phone.d.ts",
+        "default": "./dist/phone.js"
+      },
+      "require": {
+        "types": "./dist/phone.d.cts",
+        "default": "./dist/phone.cjs"
+      }
+    },
+    "./currency": {
+      "import": {
+        "types": "./dist/currency.d.ts",
+        "default": "./dist/currency.js"
+      },
+      "require": {
+        "types": "./dist/currency.d.cts",
+        "default": "./dist/currency.cjs"
+      }
+    },
+    "./dates": {
+      "import": {
+        "types": "./dist/dates.d.ts",
+        "default": "./dist/dates.js"
+      },
+      "require": {
+        "types": "./dist/dates.d.cts",
+        "default": "./dist/dates.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check src test",
+    "lint:fix": "biome check --write src test"
+  },
+  "keywords": [
+    "brazil",
+    "brasil",
+    "cpf",
+    "cnpj",
+    "cnpj-alfanumerico",
+    "cnpj-alphanumeric",
+    "cep",
+    "pix",
+    "validation",
+    "validator",
+    "zero-dependency",
+    "tree-shakeable"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/victorhugo/br-kit",
+    "directory": "packages/ts"
+  },
+  "homepage": "https://github.com/victorhugo/br-kit#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.16",
+    "@types/node": "^22.19.20",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.8"
+  }
+}

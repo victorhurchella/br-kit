@@ -1,0 +1,148 @@
+{
+  "module": "cpf",
+  "isValid": [
+    {
+      "input": "390.533.447-05",
+      "expected": true
+    },
+    {
+      "input": "39053344705",
+      "expected": true
+    },
+    {
+      "input": "12345678909",
+      "expected": true
+    },
+    {
+      "input": "11144477735",
+      "expected": true
+    },
+    {
+      "input": "52998224725",
+      "expected": true
+    },
+    {
+      "input": "08765432126",
+      "expected": true
+    },
+    {
+      "input": "24681357928",
+      "expected": true
+    },
+    {
+      "input": "111.111.111-11",
+      "expected": false
+    },
+    {
+      "input": "000.000.000-00",
+      "expected": false
+    },
+    {
+      "input": "390.533.447-00",
+      "expected": false
+    },
+    {
+      "input": "123.456.789-00",
+      "expected": false
+    },
+    {
+      "input": "1234567890",
+      "expected": false
+    },
+    {
+      "input": "123456789012",
+      "expected": false
+    },
+    {
+      "input": "abcdefghijk",
+      "expected": false
+    },
+    {
+      "input": "390.533.447-0X",
+      "expected": false
+    },
+    {
+      "input": "３９０５３３４４７０５",
+      "expected": false
+    },
+    {
+      "input": "",
+      "expected": false
+    }
+  ],
+  "validateDetailed": [
+    {
+      "input": "390.533.447-05",
+      "valid": true,
+      "reason": null
+    },
+    {
+      "input": "111.111.111-11",
+      "valid": false,
+      "reason": "repeated-digits"
+    },
+    {
+      "input": "000.000.000-00",
+      "valid": false,
+      "reason": "repeated-digits"
+    },
+    {
+      "input": "390.533.447-00",
+      "valid": false,
+      "reason": "invalid-check-digit"
+    },
+    {
+      "input": "1234567890",
+      "valid": false,
+      "reason": "invalid-length"
+    },
+    {
+      "input": "390.533.447-0X",
+      "valid": false,
+      "reason": "invalid-characters"
+    },
+    {
+      "input": "３９０５３３４４７０５",
+      "valid": false,
+      "reason": "invalid-characters"
+    },
+    {
+      "input": "abc",
+      "valid": false,
+      "reason": "invalid-characters"
+    },
+    {
+      "input": "",
+      "valid": false,
+      "reason": "invalid-characters"
+    }
+  ],
+  "format": [
+    {
+      "input": "39053344705",
+      "expected": "390.533.447-05"
+    },
+    {
+      "input": "390.533.447-05",
+      "expected": "390.533.447-05"
+    },
+    {
+      "input": "12345",
+      "error": true
+    },
+    {
+      "input": "390.533.447-0X",
+      "error": true
+    }
+  ],
+  "strip": [
+    {
+      "input": "390.533.447-05",
+      "expected": "39053344705"
+    },
+    {
+      "input": "39053344705",
+      "expected": "39053344705"
+    }
+  ]
+}

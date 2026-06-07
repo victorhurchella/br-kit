@@ -1,0 +1,40 @@
+{
+  "$comment": "Source of truth for the parity gate. Every function MUST exist with the listed name in BOTH languages. scripts/check-parity.mjs enforces this. TS uses camelCase, Python snake_case; behaviour is pinned by the shared vectors in this directory.",
+  "version": "0.1.0",
+  "modules": {
+    "cpf": [
+      { "ts": "isValid", "py": "is_valid" },
+      { "ts": "validateDetailed", "py": "validate_detailed" },
+      { "ts": "format", "py": "format" },
+      { "ts": "strip", "py": "strip" },
+      { "ts": "generate", "py": "generate" }
+    ],
+    "cnpj": [
+      { "ts": "isValid", "py": "is_valid" },
+      { "ts": "validateDetailed", "py": "validate_detailed" },
+      { "ts": "format", "py": "format" },
+      { "ts": "strip", "py": "strip" },
+      { "ts": "generate", "py": "generate" },
+      { "ts": "isAlphanumeric", "py": "is_alphanumeric" }
+    ],
+    "cep": [
+      { "ts": "isValid", "py": "is_valid" },
+      { "ts": "format", "py": "format" },
+      { "ts": "strip", "py": "strip" }
+    ],
+    "phone": [
+      { "ts": "isValid", "py": "is_valid" },
+      { "ts": "format", "py": "format" },
+      { "ts": "strip", "py": "strip" },
+      { "ts": "parse", "py": "parse" }
+    ],
+    "currency": [
+      { "ts": "formatBRL", "py": "format_brl" },
+      { "ts": "parseBRL", "py": "parse_brl" }
+    ],
+    "dates": [
+      { "ts": "formatPtBr", "py": "format_pt_br" },
+      { "ts": "parsePtBr", "py": "parse_pt_br" }
+    ]
+  }
+}

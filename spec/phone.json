@@ -1,0 +1,111 @@
+{
+  "module": "phone",
+  "isValid": [
+    {
+      "input": "(11) 91234-5678",
+      "expected": true
+    },
+    {
+      "input": "11912345678",
+      "expected": true
+    },
+    {
+      "input": "1133334444",
+      "expected": true
+    },
+    {
+      "input": "(11) 3333-4444",
+      "expected": true
+    },
+    {
+      "input": "5511912345678",
+      "expected": true
+    },
+    {
+      "input": "11812345678",
+      "expected": false
+    },
+    {
+      "input": "2012345678",
+      "expected": false
+    },
+    {
+      "input": "1191234567",
+      "expected": false
+    },
+    {
+      "input": "119123456789",
+      "expected": false
+    },
+    {
+      "input": "１１９１２３４５６７８",
+      "expected": false
+    },
+    {
+      "input": "",
+      "expected": false
+    }
+  ],
+  "format": [
+    {
+      "input": "11912345678",
+      "expected": "(11) 91234-5678"
+    },
+    {
+      "input": "1133334444",
+      "expected": "(11) 3333-4444"
+    },
+    {
+      "input": "5511912345678",
+      "expected": "(11) 91234-5678"
+    },
+    {
+      "input": "2012345678",
+      "error": true
+    }
+  ],
+  "strip": [
+    {
+      "input": "(11) 91234-5678",
+      "expected": "11912345678"
+    },
+    {
+      "input": "+55 (11) 3333-4444",
+      "expected": "551133334444"
+    }
+  ],
+  "parse": [
+    {
+      "input": "11912345678",
+      "expected": {
+        "ddd": "11",
+        "number": "912345678",
+        "type": "mobile"
+      }
+    },
+    {
+      "input": "1133334444",
+      "expected": {
+        "ddd": "11",
+        "number": "33334444",
+        "type": "landline"
+      }
+    },
+    {
+      "input": "5511912345678",
+      "expected": {
+        "ddd": "11",
+        "number": "912345678",
+        "type": "mobile"
+      }
+    },
+    {
+      "input": "2012345678",
+      "expected": null
+    },
+    {
+      "input": "garbage",
+      "expected": null
+    }
+  ]
+}

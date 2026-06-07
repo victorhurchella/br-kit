@@ -1,0 +1,29 @@
+{
+  "name": "br-kit-monorepo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Monorepo for br-kit — zero-dependency Brazilian document utils (TypeScript + Python).",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "workspaces": [
+    "packages/ts"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace packages/ts",
+    "typecheck": "npm run typecheck --workspace packages/ts",
+    "test:ts": "npm run test --workspace packages/ts",
+    "test:py": "python3 -m pytest packages/py",
+    "test": "npm run test:ts && npm run test:py",
+    "lint:ts": "npm run lint --workspace packages/ts",
+    "lint:py": "ruff check packages/py && mypy packages/py/src",
+    "lint": "npm run lint:ts && npm run lint:py",
+    "size": "node scripts/check-size.mjs",
+    "parity": "npm run build && node scripts/check-parity.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.0"
+  }
+}

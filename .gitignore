@@ -1,0 +1,32 @@
+# dependencies
+node_modules/
+packages/*/node_modules/
+.venv/
+venv/
+
+# python build / cache
+__pycache__/
+*.pyc
+*.egg-info/
+.eggs/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# typescript build / cache
+dist/
+*.tsbuildinfo
+coverage/
+.vitest/
+
+# env (no secrets in this repo, but never commit any that appear)
+.env
+.env.*
+!.env.example
+
+# editor / os
+.DS_Store
+*.log
+.idea/
