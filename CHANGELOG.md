@@ -27,5 +27,5 @@ compartilhada.
 - **`docs/`** — algoritmo do DV do CNPJ alfanumérico documentado (PT + EN).
 - CI: lint + testes nas duas linguagens + gate de paridade + budget de bundle.
 
-[Unreleased]: https://github.com/victorhugo/br-kit/compare/v0.1.0...HEAD
-[0.1.0]: https://github.com/victorhugo/br-kit/releases/tag/v0.1.0
+[Unreleased]: https://github.com/victorhurchella/br-kit/compare/v0.1.0...HEAD
+[0.1.0]: https://github.com/victorhurchella/br-kit/releases/tag/v0.1.0

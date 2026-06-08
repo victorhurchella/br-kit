@@ -33,9 +33,29 @@ currency.formatBRL(1234.56);            // "R$ 1.234,56"
 currency.parseBRL("R$ 1.234,56");       // 1234.56
 ```
 
-## Módulos (v0.1)
+## API (v0.1)
 
-`cpf` · `cnpj` (numérico + alfanumérico) · `cep` · `phone` · `currency` · `dates`
+| Módulo | Funções |
+|---|---|
+| `cpf` | `isValid` · `validateDetailed` · `format` · `strip` · `generate` |
+| `cnpj` | `isValid` · `isAlphanumeric` · `validateDetailed` · `format` · `strip` · `generate` |
+| `cep` | `isValid` · `format` · `strip` |
+| `phone` | `isValid` · `parse` · `format` · `strip` |
+| `currency` | `formatBRL` · `parseBRL` |
+| `dates` | `parsePtBr` · `formatPtBr` |
+
+**Contrato (idêntico ao pacote Python, em `camelCase`):**
+
+- `isValid(value)` → `boolean`, **nunca lança**.
+- `validateDetailed(value)` → `{ valid, reason }`. `reason` é estável:
+  `invalid-characters` · `invalid-length` · `repeated-digits` · `invalid-check-digit`.
+- `format(value)` / `parse(value)` **lançam `RangeError`** em input inválido
+  (em Python: `ValueError`).
+- `strip(value)` remove a máscara; `generate()` é **só para testes/fixtures** —
+  nunca trate o resultado como documento real.
+
+API completa e tipada (`.d.ts` incluído). Documentação do algoritmo do CNPJ
+alfanumérico: [docs/cnpj-alphanumeric.md](https://github.com/victorhurchella/br-kit/blob/main/docs/cnpj-alphanumeric.md).
 
 ## ✅ Pronto para o CNPJ alfanumérico (julho/2026)
 
@@ -44,4 +64,4 @@ primeiros caracteres (IN RFB 2.229/2024). `cnpj` valida ambos os formatos de
 forma transparente — `/\d{14}/` quebra, `br-kit` não.
 
 Licença MIT. Documentação completa e suíte de conformidade:
-<https://github.com/victorhugo/br-kit>
+<https://github.com/victorhurchella/br-kit>

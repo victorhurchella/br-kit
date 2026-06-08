@@ -31,9 +31,10 @@ dependencies = []
 dev = ["pytest>=8", "ruff>=0.6", "mypy>=1.11"]
 
 [project.urls]
-Homepage = "https://github.com/victorhugo/br-kit"
-Source = "https://github.com/victorhugo/br-kit"
-"Bug Tracker" = "https://github.com/victorhugo/br-kit/issues"
+Homepage = "https://github.com/victorhurchella/br-kit"
+Source = "https://github.com/victorhurchella/br-kit"
+"Bug Tracker" = "https://github.com/victorhurchella/br-kit/issues"
+Changelog = "https://github.com/victorhurchella/br-kit/blob/main/CHANGELOG.md"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/br_kit"]

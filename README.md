@@ -4,9 +4,9 @@
 
 **Validação, formatação, parsing e geração de documentos brasileiros — zero dependências, em TypeScript e Python.**
 
-[![CI](https://github.com/victorhugo/br-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/victorhugo/br-kit/actions/workflows/ci.yml)
-[![npm](https://img.shields.io/badge/npm-br--kit-cb3837)](https://www.npmjs.com/package/br-kit)
-[![PyPI](https://img.shields.io/badge/PyPI-br--kit-3775a9)](https://pypi.org/project/br-kit/)
+[![CI](https://github.com/victorhurchella/br-kit/actions/workflows/ci.yml/badge.svg)](https://github.com/victorhurchella/br-kit/actions/workflows/ci.yml)
+[![npm](https://img.shields.io/npm/v/br-kit?logo=npm&color=cb3837)](https://www.npmjs.com/package/br-kit)
+[![PyPI](https://img.shields.io/pypi/v/br-kit?logo=pypi&logoColor=white&color=3775a9)](https://pypi.org/project/br-kit/)
 [![license](https://img.shields.io/badge/license-MIT-blue)](./LICENSE)
 [![deps](https://img.shields.io/badge/runtime%20deps-0-brightgreen)](#princ%C3%ADpios)
 

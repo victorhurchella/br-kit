@@ -112,10 +112,16 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/victorhugo/br-kit",
+    "url": "git+https://github.com/victorhurchella/br-kit.git",
     "directory": "packages/ts"
   },
-  "homepage": "https://github.com/victorhugo/br-kit#readme",
+  "bugs": {
+    "url": "https://github.com/victorhurchella/br-kit/issues"
+  },
+  "homepage": "https://github.com/victorhurchella/br-kit#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@biomejs/biome": "^2.4.16",
     "@types/node": "^22.19.20",
